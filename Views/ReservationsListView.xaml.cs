@@ -5,7 +5,7 @@ namespace HotelReservations.Views
 {
     public partial class ReservationsListView : UserControl
     {
-         public ReservationsListView()
+        public ReservationsListView()
         {
             InitializeComponent();
         }
