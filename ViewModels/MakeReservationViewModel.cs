@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using HotelReservations.Commands;
 
 namespace HotelReservations.ViewModels
 {
@@ -90,7 +91,7 @@ namespace HotelReservations.ViewModels
 
         public MakeReservationViewModel()
         {
-            
+            SubmitCommand = new SubmitReservationCommand();
         }
     }
 
