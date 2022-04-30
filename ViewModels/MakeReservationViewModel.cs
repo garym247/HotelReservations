@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Input;
 using HotelReservations.Commands;
+using HotelReservations.Model;
 
 namespace HotelReservations.ViewModels
 {
@@ -80,7 +81,7 @@ namespace HotelReservations.ViewModels
                 OnPropertyChanged(nameof(EndDate));
             }
         }
-        #endregion
+        #endregion // Binding_Properties
         
         #region Commands
         public ICommand SubmitCommand { get; }
@@ -89,9 +90,10 @@ namespace HotelReservations.ViewModels
         
         #endregion  // Commands
 
-        public MakeReservationViewModel()
+        public MakeReservationViewModel(Hotel hotel)
         {
-            SubmitCommand = new SubmitReservationCommand();
+            SubmitCommand = new SubmitReservationCommand(this, hotel);
+            CancelCommand = new CancelReservationCommand();
         }
     }
 

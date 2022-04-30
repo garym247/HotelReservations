@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using HotelReservations.Model;
 
 namespace HotelReservations.ViewModels
 {
@@ -6,9 +7,9 @@ namespace HotelReservations.ViewModels
     {
         public ViewModelBase CurrentViewModel { get; }
 
-        public MainViewModel()
+        public MainViewModel(Hotel hotel)
         {
-            CurrentViewModel = new ReservationsListViewModel();
+            CurrentViewModel = new MakeReservationViewModel(hotel);
         }
     } 
 
