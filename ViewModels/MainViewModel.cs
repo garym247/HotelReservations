@@ -1,15 +1,20 @@
 using System.ComponentModel;
 using HotelReservations.Model;
+using HotelReservations.Stores;
 
 namespace HotelReservations.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        private readonly NavigationStore _navigationStore;
+        
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        public MainViewModel(Hotel hotel)
+        public MainViewModel(Hotel hotel, NavigationStore navigationStore)
         {
-            CurrentViewModel = new MakeReservationViewModel(hotel);
+            _navigationStore = navigationStore;
+            //CurrentViewModel = new MakeReservationViewModel(hotel);
+            CurrentViewModel = new ReservationsListViewModel();
         }
     } 
 

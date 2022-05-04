@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using HotelReservations.ViewModels;
 using HotelReservations.Model;
+using HotelReservations.Stores;
 
 namespace HotelReservations
 {
@@ -15,11 +16,13 @@ namespace HotelReservations
     /// </summary>
     public partial class App : Application
     {
-        private readonly Hotel hotel;
+        private readonly Hotel _hotel;
+        private readonly NavigationStore _navigationStore;
 
         public App()
         {
-            hotel = new Hotel("The Big G's Hotel");   
+            _navigationStore = new NavigationStore();
+            _hotel = new Hotel("The Big G's Hotel");   
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -37,7 +40,7 @@ namespace HotelReservations
 
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(hotel)
+                DataContext = new MainViewModel(_hotel)
             };
 
             MainWindow.Show();

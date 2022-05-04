@@ -24,9 +24,9 @@ namespace HotelReservations.Commands
             }
         }
 
-        public override bool CanExecute(object parameter)
+        public override bool CanExecute(object obj)
         {
-            return !string.IsNullOrEmpty(viewModel.Name) && base.CanExecute(parameter);
+            return !string.IsNullOrEmpty(viewModel.Name) && base.CanExecute(obj);
         }
 
         public override void Execute(object param)
