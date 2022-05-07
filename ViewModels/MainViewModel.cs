@@ -14,7 +14,7 @@ namespace HotelReservations.ViewModels
         {
             _navigationStore = navigationStore;
             //CurrentViewModel = new MakeReservationViewModel(hotel);
-            CurrentViewModel = new ReservationsListViewModel();
+            //CurrentViewModel = new ReservationsListViewModel();
         }
     } 
 
