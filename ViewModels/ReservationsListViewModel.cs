@@ -12,8 +12,7 @@ namespace HotelReservations.ViewModels
     public class ReservationsListViewModel : ViewModelBase
     {
         public readonly ObservableCollection<ReservationViewModel> reservations;
-        public readonly ObservableCollection<ReservationViewModel> reservations;
-
+        
         public IEnumerable<ReservationViewModel> Reservations => reservations;
 
         public ICommand MakeReservationCommand { get; }
@@ -27,7 +26,7 @@ namespace HotelReservations.ViewModels
             reservations.Add(new ReservationViewModel(new Reservation(new RoomID(1, 2), "geoff", DateTime.Now, DateTime.Now) ));
             reservations.Add(new ReservationViewModel(new Reservation(new RoomID(2, 2), "harry", DateTime.Now, DateTime.Now) ));
 
-            MakeReservationCommand = new NavigateCommand()
+            MakeReservationCommand = new NavigateCommand(_navigationStore);
         }
     }
 }

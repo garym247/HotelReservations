@@ -38,7 +38,7 @@ namespace HotelReservations
             // var fredsReservations = hotel.GetReservationsForClient("fred");
             // var numFredsReservations = fredsReservations.Count(); 
 
-            _navigationStore.CurrentViewModel = new ReservationsListViewModel();
+            _navigationStore.CurrentViewModel = new ReservationsListViewModel(_navigationStore);
             
             MainWindow = new MainWindow()
             {

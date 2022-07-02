@@ -17,7 +17,6 @@
                 <views:MakeReservationView />
             </DataTemplate>
         </Grid.Resources>
-        <views:ReservationsListView DataContext="{Binding CurrentViewModel}" />
         <ContentControl Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>

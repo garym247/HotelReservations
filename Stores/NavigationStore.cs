@@ -1,3 +1,4 @@
+using System;
 using HotelReservations.ViewModels;
 
 namespace HotelReservations.Stores
@@ -8,8 +9,18 @@ namespace HotelReservations.Stores
         public ViewModelBase CurrentViewModel
         {
             get { return _currentViewModel; }
-            set { _currentViewModel = value; }
+            set 
+            { 
+                _currentViewModel = value;
+                OnViewModelChanged();
+            }
         }
-        
+
+        private void OnViewModelChanged()
+        {
+            CurrentViewModelChanged?.Invoke();
+        }
+
+        public event Action CurrentViewModelChanged;
     }
 }
